@@ -10,7 +10,7 @@ import pandas as pd
 args = parse_args()
 args.segment = True
 args.gpu = None
-args.batch_size = 32
+args.batch_size = 64
 
 spacy_nlp = spacy.load('en', disable=['parser', 'ner', 'textcat'])
 
