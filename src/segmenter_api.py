@@ -12,7 +12,7 @@ args.segment = True
 args.gpu = None
 args.batch_size = 64
 
-spacy_nlp = spacy.load('en', disable=['parser', 'ner', 'textcat'])
+spacy_nlp = spacy.load('en_core_web_sm', disable=['parser', 'ner', 'textcat'])
 
 rst_data = RSTData()
 with open(args.word_vocab_path, 'rb') as fin:
@@ -58,7 +58,6 @@ def segment_text(args, raw_sents):
 
 app = Flask(__name__)
 
-
 @app.route('/edu', methods=['POST'])
 def edu():
     text = request.json["text"]
@@ -75,4 +74,4 @@ def edu():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')
