@@ -1,4 +1,4 @@
-FROM python:3.6.15-slim-buster
+FROM --platform=linux/amd64 python:3.6.15-slim-buster
 RUN apt-get update
 RUN apt-get -y install gcc
 
